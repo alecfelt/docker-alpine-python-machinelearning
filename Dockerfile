@@ -31,7 +31,7 @@ RUN cd /tmp && \
     \
     pip install cython && \
     pip install pycddlib && \
-    pip uninstall --yes cython && \
+    # pip uninstall --yes cython && \
     \
     wget "ftp://ftp.gnu.org/gnu/glpk/glpk-4.65.tar.gz" && \
     tar xzf "glpk-4.65.tar.gz" && \

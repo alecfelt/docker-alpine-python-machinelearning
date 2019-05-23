@@ -8,10 +8,12 @@ RUN apk add --no-cache \
     \
     ln -s locale.h /usr/include/xlocale.h && \
     \
-    pip install numpy && \
-    pip install pandas && \
-    pip install scipy && \
-    pip install scikit-learn && \
+    pip install --upgrade pip && \
+    pip install numpy==1.16.3 && \
+    pip install pandas==0.24.2 && \
+    pip install scipy==1.2.1 && \
+    pip install cython==0.29.7 && \
+    pip install scikit-learn==0.21.1 && \
     \
     rm -r /root/.cache && \
     find /usr/lib/python3.*/ -name 'tests' -exec rm -r '{}' + && \
@@ -29,8 +31,7 @@ RUN cd /tmp && \
         musl-dev python3-dev gmp-dev suitesparse-dev openblas-dev && \
     apk add gmp suitesparse && \
     \
-    pip install cython && \
-    pip install pycddlib && \
+    pip install pycddlib==2.1.0 && \
     # pip uninstall --yes cython && \
     \
     wget "ftp://ftp.gnu.org/gnu/glpk/glpk-4.65.tar.gz" && \
